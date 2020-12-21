@@ -1,0 +1,44 @@
+/* Анимация загрузки */
+.loading{
+
+  display: block !important;
+    background-color: rgba(0,0,0,0);
+    z-index: 9999 !important;
+    overflow: hidden;
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    text-indent: -9999px;
+    text-align: center;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-50%);
+
+  }
+
+.loading::before, .loading::after {
+
+  border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      content: '';
+      background-color: #000;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -50px 0 0 -50px;
+
+    }
+
+.loading::after {
+
+  width: 85px;
+  height: 85px;
+  margin: -43px 0 0 -43px;
+  border: 10px solid rgba(255,255,255,0.2);
+  border-left-color: #fff;
+  animation: spin 1s infinite linear;
+
+}
+
+@keyframes spin { 0% {transform: rotate(0deg);} 100% {transform: rotate(360deg);}}

@@ -1,0 +1,38 @@
+/* Анимация загрузки */
+.loading{display: block !important; background-color: rgba(0,0,0,0); z-index:9999 !important; overflow: hidden; position: fixed; width: 100px; height: 100px; text-indent: -9999px;}
+.loading::before, .loading::after {border-radius: 50%; width: 100px; height: 100px; content: ''; background-color: var(--primary-color); position: absolute; top: 50%; left: 50%; margin: -50px 0 0 -50px}
+.loading::after {width: 40px; height: 40px; margin: -30px 0 0 -30px; border: 10px solid rgba(255,255,255,0.2); border-left-color: #fff; animation: spin 1s infinite linear;}
+@keyframes spin { 0% {transform: rotate(0deg);} 100% {transform: rotate(360deg);}}
+
+.form-list div {
+    position: relative;
+}
+
+.form-control_error {
+    border-color: IndianRed;
+}
+
+.error {
+    display: none;
+    font-size: 12px;
+    color: white;
+    position: absolute;
+    left: 250px;
+    top: calc(100% + 8px);
+    z-index: 100;
+    padding: 6px 10px 7px;
+    border-radius: 6px;
+    background: IndianRed;
+}
+
+.error:before {
+    width: 0;
+    height: 0;
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: -7px;
+    border-right: 8px solid;
+    border-left: 8px solid;
+    border-bottom: 8px solid IndianRed;
+}
